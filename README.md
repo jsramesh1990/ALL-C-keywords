@@ -11,7 +11,7 @@
 
 ---
 
-## 📖 Overview
+##  Overview
 
 This project provides a **structured, hands-on reference** for every C keyword. Each keyword includes:
 - ✅ **Tiny runnable example**
@@ -21,7 +21,7 @@ This project provides a **structured, hands-on reference** for every C keyword. 
 
 ---
 
-## ✨ Tiny Example – See It in Action
+##  Tiny Example – See It in Action
 
 Every keyword has a minimal demo. Here's `static`:
 
@@ -68,7 +68,7 @@ Called 2 time(s)
 
 ---
 
-## 🧱 Project Flow – Code Architecture
+##  Project Flow – Code Architecture
 
 ```mermaid
 flowchart LR
@@ -100,7 +100,7 @@ flowchart LR
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```bash
 c-keyword-mastery/
@@ -125,7 +125,7 @@ c-keyword-mastery/
 
 ---
 
-## 🛠️ Build & Run
+##  Build & Run
 
 ### Prerequisites
 - GCC or Clang
@@ -156,7 +156,7 @@ gcc examples/static.c -o static_demo
 
 ---
 
-## 📊 Keywords by Standard
+##  Keywords by Standard
 
 | Standard | Keywords | Example |
 |----------|----------|---------|
@@ -168,7 +168,7 @@ gcc examples/static.c -o static_demo
 
 ---
 
-## 🧪 Testing Example
+##  Testing Example
 
 Each keyword has a test verifying its behavior:
 
@@ -196,7 +196,7 @@ make test
 
 ---
 
-## 📚 Documentation Sample
+##  Documentation Sample
 
 Each keyword has a markdown file in `docs/`:
 
@@ -219,7 +219,7 @@ Use for counters or caches that must persist across calls.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repo
 2. Create a branch: `git checkout -b feature/new-keyword`
@@ -231,7 +231,7 @@ Use for counters or caches that must persist across calls.
 
 ---
 
-## 📌 Roadmap
+##  Roadmap
 
 - [ ] Add all 44 examples
 - [ ] Add C17/C23 notes
@@ -240,18 +240,17 @@ Use for counters or caches that must persist across calls.
 
 ---
 
-## 📄 License
+##  License
 
 MIT License – free for learning and teaching.
 
 ---
 
-## ⭐ Support
+##  Support
 
 If this helps you master C, give it a star ⭐
 
-```bash
-git clone https://github.com/YOUR_USERNAME/c-keyword-mastery.git
+
 ```
 
 **Master C, one keyword at a time.**
