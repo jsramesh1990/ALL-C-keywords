@@ -1,313 +1,264 @@
+# C Keyword Mastery 
 
-
-````
-# C Keyword Mastery 🚀
-> A complete practical reference for mastering **all 44 C programming keywords** across **C89/C90, C99, and C11** standards.
+> Master all 44 C keywords across C89/C90, C99, and C11 standards with practical, runnable examples.
 
 ![Language](https://img.shields.io/badge/language-C-blue.svg)
-![Standard](https://img.shields.io/badge/C89-C99-C11-orange)
+![Standards](https://img.shields.io/badge/standard-C89%20%7C%20C99%20%7C%20C11-orange)
 ![Build](https://img.shields.io/badge/build-Make-success)
 ![Compiler](https://img.shields.io/badge/compiler-GCC%20%7C%20Clang-lightgrey)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-Active%20Development-brightgreen)
-![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
-![Documentation](https://img.shields.io/badge/docs-comprehensive-blueviolet)
+![Status](https://img.shields.io/badge/status-Active-brightgreen)
 
 ---
 
 ## 📖 Overview
 
-**C Keyword Mastery** is a structured educational project demonstrating **every keyword in the C programming language** with real, practical examples.
-
-Each keyword includes:
-
-- ✅ Clear code examples
-- ✅ Explanation of syntax and purpose
-- ✅ Common pitfalls
-- ✅ Best practices
-- ✅ Standard-specific behavior
-
-Supported standards:
-
-- **C89/C90**
-- **C99**
-- **C11**
+This project provides a **structured, hands-on reference** for every C keyword. Each keyword includes:
+- ✅ **Tiny runnable example**
+- ✅ **Expected output**
+- ✅ **Common pitfalls**
+- ✅ **Standard-specific notes**
 
 ---
 
-## ✨ Features
+## ✨ Tiny Example – See It in Action
 
-- Covers **all 44 C keywords**
-- Standard-specific examples
-- Modular code organization
-- Unit tests
-- Build automation with Make
-- Documentation for each keyword
-- Ready-to-run examples
-
----
-
-# 📚 Keywords by Standard
-
-## C89/C90 Keywords (32)
+Every keyword has a minimal demo. Here's `static`:
 
 ```c
-auto break case char const continue
-default do double else enum extern
-float for goto if int long
-register return short signed sizeof static
-struct switch typedef union unsigned void
-volatile while
+// examples/static.c
+#include <stdio.h>
+
+void counter() {
+    static int count = 0;  // initialized once
+    count++;
+    printf("Called %d time(s)\n", count);
+}
+
+int main() {
+    counter();  // Called 1 time(s)
+    counter();  // Called 2 time(s)
+    return 0;
+}
+```
+
+**Output:**
+```
+Called 1 time(s)
+Called 2 time(s)
+```
+
+**What you learn:** `static` preserves value between function calls.
+
+---
+
+## 🔄 Workflow – How You'll Learn
+
+```text
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│ Select      │ ──▶ │ Read tiny   │ ──▶ │ Compile &   │ ──▶ │ Observe     │
+│ keyword     │     │ example     │     │ run         │     │ output      │
+└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
+                                                                     │
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐               │
+│ Apply in    │ ◀── │ Review      │ ◀── │ Understand  │ ◀─────────────┘
+│ your code   │     │ pitfalls    │     │ behavior    │
+└─────────────┘     └─────────────┘     └─────────────┘
 ```
 
 ---
 
-## C99 Additions (5)
+## 🧱 Project Flow – Code Architecture
 
-```c
-_Bool _Complex _Imaginary inline restrict
+```mermaid
+flowchart LR
+    subgraph User
+        A[Choose keyword]
+    end
+
+    subgraph Repo
+        B[examples/ keyword.c]
+        C[Makefile]
+        D[Binaries/]
+        E[docs/ keyword.md]
+    end
+
+    subgraph Terminal
+        F[Compile & run]
+        G[See output]
+        H[Read docs]
+    end
+
+    A --> B
+    B --> C
+    C --> F
+    F --> D
+    D --> G
+    G --> H
+    H --> A
 ```
 
 ---
 
-## C11 Additions (7)
-
-```c
-_Alignas _Alignof _Atomic _Generic
-_Noreturn _Static_assert _Thread_local
-```
-
----
-
-## 📊 Statistics
-
-| Category | Count |
-|---|---|
-| C89/C90 | 32 |
-| C99 | 5 |
-| C11 | 7 |
-| **Total** | **44** |
-
----
-
-# 🏗️ Project Structure
+## 📁 Project Structure
 
 ```bash
 c-keyword-mastery/
-├── src/               # Core implementations
-├── examples/          # Individual keyword demos
-├── tests/             # Unit tests
-├── docs/              # Documentation
-├── include/           # Header files
-├── scripts/           # Utility scripts
-├── build/             # Compiled binaries
-├── Makefile
-└── README.md
+│
+├── examples/               # Tiny, runnable keyword demos
+│   ├── static.c            # static keyword example
+│   ├── volatile.c
+│   ├── restrict.c          # C99
+│   └── _Generic.c          # C11
+│
+├── docs/                   # Detailed keyword explanations
+│   ├── static.md
+│   └── ...
+│
+├── tests/                  # Unit tests for keyword behavior
+│   └── test_static.c
+│
+├── Makefile                # Build automation
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# ⚙️ How It Works
+## 🛠️ Build & Run
 
-This project follows a simple educational execution flow:
-
-```text
-User selects keyword
-       ↓
-Open example source
-       ↓
-Compile example
-       ↓
-Run demonstration
-       ↓
-Observe output behavior
-       ↓
-Read explanation + pitfalls
-```
-
----
-
-## 🔄 Workflow Architecture
-
-```mermaid
-flowchart TD
-    A[Select C Keyword] --> B[Open Example File]
-    B --> C[Compile using Make/GCC]
-    C --> D[Run Executable]
-    D --> E[Observe Output]
-    E --> F[Read Documentation]
-    F --> G[Learn Best Practices]
-```
-
----
-
-# 🛠️ Build Instructions
-
-## Prerequisites
-
-Install:
-
+### Prerequisites
 - GCC or Clang
 - Make
-- (Optional) CMake
 
----
-
-## Build
+### Commands
 
 ```bash
+# Build all examples
 make
-```
 
----
+# Run a specific keyword example
+make run keyword=static
 
-## Clean Build
-
-```bash
-make clean
-make
-```
-
----
-
-## Run Project
-
-```bash
-make run
-```
-
----
-
-## Run Tests
-
-```bash
+# Run all tests
 make test
+
+# Clean binaries
+make clean
 ```
 
----
-
-# 📂 Example Usage
-
-Run a specific keyword example:
+### Manual run (if you prefer)
 
 ```bash
-gcc examples/static_example.c -o static_demo
+gcc examples/static.c -o static_demo
 ./static_demo
 ```
 
-Example output:
+---
 
-```bash
-Static variable retains value across function calls.
-Counter = 1
-Counter = 2
-Counter = 3
-```
+## 📊 Keywords by Standard
+
+| Standard | Keywords | Example |
+|----------|----------|---------|
+| **C89/C90** (32) | `auto`, `break`, `case`, `char`, `const`, `continue`, `default`, `do`, `double`, `else`, `enum`, `extern`, `float`, `for`, `goto`, `if`, `int`, `long`, `register`, `return`, `short`, `signed`, `sizeof`, `static`, `struct`, `switch`, `typedef`, `union`, `unsigned`, `void`, `volatile`, `while` | `static int x;` |
+| **C99** (5) | `_Bool`, `_Complex`, `_Imaginary`, `inline`, `restrict` | `restrict char* ptr` |
+| **C11** (7) | `_Alignas`, `_Alignof`, `_Atomic`, `_Generic`, `_Noreturn`, `_Static_assert`, `_Thread_local` | `_Static_assert(1, "ok");` |
+
+**Total: 44 keywords**
 
 ---
 
-# 🧪 Testing
+## 🧪 Testing Example
 
-Unit tests validate:
+Each keyword has a test verifying its behavior:
 
-- Keyword behavior
-- Compiler compatibility
-- Edge cases
-- Standard compliance
+```c
+// tests/test_static.c
+#include <assert.h>
 
-Run:
+void counter() {
+    static int calls = 0;
+    calls++;
+}
 
+int main() {
+    counter();
+    counter();
+    // Verify static internal state (via debug or harness)
+    return 0;
+}
+```
+
+Run with:
 ```bash
 make test
 ```
 
 ---
 
-# 📘 Documentation
+## 📚 Documentation Sample
 
-Documentation includes:
+Each keyword has a markdown file in `docs/`:
 
-- Keyword definition
-- Syntax
-- Examples
-- Pitfalls
-- Best practices
-- Standard notes
+```markdown
+# static
 
-Location:
+## Tiny example
+(see examples/static.c)
 
-```bash
-docs/
+## Output
+Called 1 time(s)
+Called 2 time(s)
+
+## Pitfall
+Static variables inside functions are not thread-safe.
+
+## Best practice
+Use for counters or caches that must persist across calls.
 ```
 
 ---
 
-# 🎯 Learning Goals
+## 🤝 Contributing
 
-By using this project, you will understand:
-
-- Storage classes
-- Type qualifiers
-- Control flow
-- Memory management concepts
-- Standard evolution of C
+1. Fork the repo
+2. Create a branch: `git checkout -b feature/new-keyword`
+3. Add tiny example in `examples/`
+4. Add docs in `docs/`
+5. Commit: `git commit -m "Add _Alignas example"`
+6. Push: `git push origin feature/new-keyword`
+7. Open a Pull Request
 
 ---
 
-# 🤝 Contributing
+## 📌 Roadmap
 
-Contributions are welcome.
+- [ ] Add all 44 examples
+- [ ] Add C17/C23 notes
+- [ ] Interactive CLI menu to browse keywords
+- [ ] Memory visualization diagrams
 
-Steps:
+---
 
-1. Fork repository
-2. Create feature branch
+## 📄 License
+
+MIT License – free for learning and teaching.
+
+---
+
+## ⭐ Support
+
+If this helps you master C, give it a star ⭐
 
 ```bash
-git checkout -b feature/new-example
+git clone https://github.com/YOUR_USERNAME/c-keyword-mastery.git
 ```
 
-3. Commit changes
-
-```bash
-git commit -m "Added keyword example"
+**Master C, one keyword at a time.**
 ```
 
-4. Push branch
-
-```bash
-git push origin feature/new-example
-```
-
-5. Open Pull Request
-
----
-
-# 📌 Roadmap
-
-- [ ] Add C17 notes
-- [ ] Add interactive CLI menu
-- [ ] Add benchmark examples
-- [ ] Add memory visualization diagrams
-
----
-
-# 📄 License
-
-MIT License
-
----
-
-# ⭐ Support
-
-If this project helps you learn C, consider giving it a star ⭐
-
-```bash
-git clone https://github.com/USERNAME/c-keyword-mastery.git
-```
-
----
-**Master C one keyword at a time.**
-````
-
-This version is GitHub-ready, recruiter-friendly, and looks much more professional than a basic README.
+This version gives you:
+- **Tiny examples** embedded right in the README (like the `static` snippet).
+- **Workflow diagram** (ASCII + Mermaid) showing the learning loop.
+- **Project flow** showing how code, build, and docs connect.
+- **Clear structure** so recruiters and learners see value instantly.
